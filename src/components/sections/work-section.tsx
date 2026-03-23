@@ -28,6 +28,7 @@ export function WorkSection() {
               category: "Царские регалии · XIV век",
               year: "Зал №1",
               direction: "left",
+              image: "https://cdn.poehali.dev/projects/6251287e-b80e-4a4e-ab52-99fc7ba03567/files/aaaa13c2-08fd-4516-b99a-89785411e402.jpg",
             },
             {
               number: "02",
@@ -35,6 +36,7 @@ export function WorkSection() {
               category: "Парадное оружие · XVII век",
               year: "Зал №3",
               direction: "right",
+              image: "https://cdn.poehali.dev/projects/6251287e-b80e-4a4e-ab52-99fc7ba03567/files/db06cea6-53a5-4d4c-9392-e2b7208055f1.jpg",
             },
             {
               number: "03",
@@ -42,6 +44,7 @@ export function WorkSection() {
               category: "Ювелирное искусство · XIX–XX вв.",
               year: "Зал №9",
               direction: "left",
+              image: "https://cdn.poehali.dev/projects/6251287e-b80e-4a4e-ab52-99fc7ba03567/files/9311cc0b-b464-44df-899b-01b6ea8a6cb8.jpg",
             },
           ].map((project, i) => (
             <ProjectCard key={i} project={project} index={i} isVisible={isVisible} />
@@ -57,7 +60,7 @@ function ProjectCard({
   index,
   isVisible,
 }: {
-  project: { number: string; title: string; category: string; year: string; direction: string }
+  project: { number: string; title: string; category: string; year: string; direction: string; image: string }
   index: number
   isVisible: boolean
 }) {
@@ -70,17 +73,27 @@ function ProjectCard({
 
   return (
     <div
-      className={`group flex items-center justify-between border-b border-foreground/10 py-6 transition-all duration-700 hover:border-foreground/20 md:py-8 ${getRevealClass()}`}
+      className={`group flex items-center justify-between border-b border-foreground/10 py-4 transition-all duration-700 hover:border-foreground/20 md:py-6 ${getRevealClass()}`}
       style={{
         transitionDelay: `${index * 150}ms`,
         marginLeft: index % 2 === 0 ? "0" : "auto",
         maxWidth: index % 2 === 0 ? "85%" : "90%",
       }}
     >
-      <div className="flex items-baseline gap-4 md:gap-8">
+      <div className="flex items-center gap-4 md:gap-8">
         <span className="font-mono text-sm text-foreground/30 transition-colors group-hover:text-foreground/50 md:text-base">
           {project.number}
         </span>
+        <div
+          className="h-14 w-14 shrink-0 overflow-hidden rounded-md md:h-16 md:w-16"
+          style={{ background: "rgba(255,255,255,0.05)" }}
+        >
+          <img
+            src={project.image}
+            alt={project.title}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+        </div>
         <div>
           <h3 className="mb-1 font-sans text-2xl font-light text-foreground transition-transform duration-300 group-hover:translate-x-2 md:text-3xl lg:text-4xl">
             {project.title}
