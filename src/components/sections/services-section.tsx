@@ -15,31 +15,31 @@ export function ServicesSection() {
           }`}
         >
           <h2 className="mb-2 font-sans text-5xl font-light tracking-tight text-foreground md:text-6xl lg:text-7xl">
-            Услуги
+            Посещение
           </h2>
-          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Наши компетенции</p>
+          <p className="font-mono text-sm text-foreground/60 md:text-base">/ Что вас ждёт</p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2 md:gap-x-16 md:gap-y-12 lg:gap-x-24">
           {[
             {
-              title: "Веб-разработка",
-              description: "Создание современных веб-приложений любой сложности",
+              title: "Экскурсии",
+              description: "Групповые и индивидуальные экскурсии с профессиональными гидами на русском и иностранных языках",
               direction: "top",
             },
             {
-              title: "UI/UX Дизайн",
-              description: "Проектирование удобных и красивых интерфейсов",
+              title: "Временные выставки",
+              description: "Регулярные тематические выставки с редкими экспонатами из фондов и других музеев мира",
               direction: "right",
             },
             {
-              title: "Мобильные приложения",
-              description: "Кроссплатформенная разработка для iOS и Android",
+              title: "Образовательные программы",
+              description: "Лекции, мастер-классы и занятия для школьников, студентов и взрослых посетителей",
               direction: "left",
             },
             {
-              title: "Консалтинг",
-              description: "Техническая экспертиза и стратегическое планирование",
+              title: "Аудиогид",
+              description: "Самостоятельное знакомство с коллекцией с помощью аудиогида на 8 языках мира",
               direction: "bottom",
             },
           ].map((service, i) => (
